@@ -1,5 +1,17 @@
-h2 {
-	color: red;
+* {
+	text-align: right;
+}
+
+body {
+	background-image: url(background.jpg);
+	background-size: cover;
+}
+
+h2, p {
+	color: #257352;
+	text-align: center;
+	border: 5px dashed rgba(113, 173, 147, 0.5);
+	cursor: pointer;
 }
 
 p {
@@ -8,4 +20,22 @@ p {
 
 p {
 	color: green;
+}
+
+li {
+	list-style: none;
+	color: #469070;
+	display: inline-block;
+}
+
+.webtext {
+	border: 5px green;
+}
+
+#div1 {
+	background: rgba(0, 0, 255, 0.5);
+}
+
+#div2 {
+	background: rgba(255, 0, 0, 0.5);
 }
