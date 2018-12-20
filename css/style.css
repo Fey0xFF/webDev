@@ -18,8 +18,17 @@ p {
 	line-height: 50px;
 	font-style: italic;
 	font-weight: bold;
-	font-size: 150%;
+	font-size: 300%;
 	font-family: "Poiret One", "Times New Roman", Georgia;
+}
+
+img {
+	float: left;
+}
+
+footer {
+	clear: both;
+	text-align: center;
 }
 
 li {
