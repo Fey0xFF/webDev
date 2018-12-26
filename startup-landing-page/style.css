@@ -1,0 +1,53 @@
+body {
+	background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.9)), url("lena-rose-491551-unsplash.jpg") no-repeat center fixed;
+	-webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #FFFFFB;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	flex: wrap;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.headline-text {
+	text-align: center;
+	padding: 1em;
+	margin: 1em;
+	font-size: 3em;
+
+}
+
+.quote-text {
+	font-size: 0.4em;
+	font-style: italic;
+}
+
+.subscribe-button {
+	background-color: rgba(0,0,0,0);
+	color: white;
+	transition: all 0.5s;
+	padding: 1em;
+	border-radius: 12px;
+	font-size: 1em;
+	letter-spacing: 0.1em
+}
+
+.subscribe-button:hover {
+	background-color: white;
+	font-weight: bold;
+	color: black;
+	cursor: pointer;
+}
+
+.logo-text {
+	color: white;
+}
