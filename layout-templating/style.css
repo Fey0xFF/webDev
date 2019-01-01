@@ -1,13 +1,23 @@
-.nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-content: stretch;
-    justify-content: flex-start;
+* {
+    margin: 0;
 }
 
-.nav-item {
-    display: ;
+.nav {
+    display: flex;
+    list-style: none;
+}
+
+.nav > li {
+    padding: 8px;
+}
+
+.nav-menu {
+    margin-left: auto;
+}
+
+.cover {
+    display: flex;
+    height: 400px;
 }
 
 .zone {
