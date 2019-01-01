@@ -93,6 +93,16 @@
 .footer {
     display: flex;
     flex-direction: row;
+    width: 100vw;
+    height: 25vw;
+    justify-content: space-around;
+}
+
+.footer > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 
