@@ -41,8 +41,6 @@
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 20% 20% 20% 20% 20%;
     align-content: center;
-/*    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: 1fr;*/
 }
 
 .grid-item {
