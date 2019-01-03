@@ -5,10 +5,20 @@
 .nav {
     display: flex;
     list-style: none;
+    flex-direction: row;
 }
 
 .nav > li {
-    padding: 8px;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    transition: all .5s ease;
 }
 
 .nav-menu {
