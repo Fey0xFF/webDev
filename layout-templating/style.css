@@ -8,6 +8,17 @@
     flex-direction: row;
 }
 
+@media only screen and (max-width: 600px) {
+    .nav {
+        font-size: 0.6em;
+        padding: 0;
+    }
+
+    .footer {
+        font-size: 0.6em;
+    }
+}
+
 .nav > li {
     padding: 20px;
 }
