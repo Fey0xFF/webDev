@@ -40,9 +40,9 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
     text-align: center;
-    height: 400px;
+    height: 50vh;
 }
 
 .grid-board {
