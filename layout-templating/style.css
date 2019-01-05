@@ -2,10 +2,20 @@
     margin: 0;
 }
 
+body {
+    font-family: Arial;
+}
+
 .nav {
     display: flex;
     list-style: none;
     flex-direction: row;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -72,6 +82,13 @@ a:hover {
     justify-content: space-around;
     align-content: center;
     text-align: center;
+}
+
+.grid-item:hover {
+    -webkit-transform: rotate(-7deg);
+    -moz-transform: rotate(-7deg);
+    -o-transform: rotate(-7deg);
+    transform: rotate(-7deg);
 }
 
 .item-1 {
