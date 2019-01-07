@@ -1,9 +1,18 @@
 
 // Make a Calculator! using prompt(), and variables, make a program that does the following:
 // 1. Prompts the user for first number.
+var firstNumber = prompt("What's the first number?");
 // 2. Stores that first number
 // 3. Prompts the user for the second number.
-// 4. stores that number and responds with the SUM by using an alert.  
+var secondNumber = prompt("What's the second number?");
+// 4. stores that number and responds with the SUM by using an alert. 
+var calcSum = Number(firstNumber) + Number(secondNumber);
+alert("Sum is: " + calcSum);
 
 
 // BONUS: Make a program that can subtract, multiply, and also divide!
+
+var firstNumber = prompt("What's the first number?");
+var secondNumber = prompt("What's the second number?");
+var calcDiv = Number(firstNumber) / Number(secondNumber);
+alert(firstNumber + " / " + secondNumber + " is: " + calcDiv);
