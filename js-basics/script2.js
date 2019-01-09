@@ -27,25 +27,25 @@ var newsFeed = [
 var userNamePrompt = prompt("What's your username?");
 var passwordPrompt = prompt("What's your password?");
 
-function signIn(user, pass) {
+function isUserValid(username, password) {
 	for (var i=0; i < database.length; i++) {
-		if(database[i].username === user && database[i].password === pass) {
-			console.log(newsfeed);
-		}
+		if(database[i].username === username && database[i].password === password) {
+			return true;
+		} 
 	}
+	return false;
+}
 
-	// if (user === database[0].username) {
-	// 	console.log("Verifying password...");
-	// 	if (pass === database[0].password) {
-	// 		console.log("Password accepted!");
-	// 		console.log(newsFeed[0].username + " is saying:" + newsFeed[0].timeline);
-	// 		console.log(newsFeed[1].username + " is saying:" + newsFeed[1].timeline);
-	// 	} else {
-	// 		console.log("Password incorrect!");
-	// 	}
-	// } else {
-	// 	console.log("Incorrect user name!");
-	// }
+function signIn(user, pass) {
+	console.log(isUserValid(user, pass));
+
+	if (isUserValid(user, pass)) {
+		newsFeed.forEach(function(item) {
+			console.log(item.username + " says: " + item.timeline);
+		})
+	} else {
+		alert("Sorry, wrong username and password!");
+	}
 }
 
 signIn(userNamePrompt, passwordPrompt);
