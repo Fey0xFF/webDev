@@ -2,6 +2,14 @@ var database = [
 	{
 		username: "anthony",
 		password: "badpassword"
+	},
+	{
+		username: "jill",
+		password: "777"
+	},
+	{
+		username: "george",
+		password: "pretzel"
 	}
 ];
 
@@ -20,18 +28,24 @@ var userNamePrompt = prompt("What's your username?");
 var passwordPrompt = prompt("What's your password?");
 
 function signIn(user, pass) {
-	if (user === database[0].username) {
-		console.log("Verifying password...");
-		if (pass === database[0].password) {
-			console.log("Password accepted!");
-			console.log(newsFeed[0].username + " is saying:" + newsFeed[0].timeline);
-			console.log(newsFeed[1].username + " is saying:" + newsFeed[1].timeline);
-		} else {
-			console.log("Password incorrect!");
+	for (var i=0; i < database.length; i++) {
+		if(database[i].username === user && database[i].password === pass) {
+			console.log(newsfeed);
 		}
-	} else {
-		console.log("Incorrect user name!");
 	}
+
+	// if (user === database[0].username) {
+	// 	console.log("Verifying password...");
+	// 	if (pass === database[0].password) {
+	// 		console.log("Password accepted!");
+	// 		console.log(newsFeed[0].username + " is saying:" + newsFeed[0].timeline);
+	// 		console.log(newsFeed[1].username + " is saying:" + newsFeed[1].timeline);
+	// 	} else {
+	// 		console.log("Password incorrect!");
+	// 	}
+	// } else {
+	// 	console.log("Incorrect user name!");
+	// }
 }
 
 signIn(userNamePrompt, passwordPrompt);
