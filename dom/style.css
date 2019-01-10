@@ -3,13 +3,13 @@ html, body {
   height: 100%;
   background: #FF7777;
   -webkit-font-smoothing: antialiased;
-  display: flex;
+/*  display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
 }
 
 h1 {
-  height: 100px;
+  /*height: 100px;*/
 }
 
 .theBounce {
