@@ -1,6 +1,7 @@
 var button = document.getElementById("enter");
 var input = document.getElementById("userinput");
 var list = document.querySelector("ul");
+var removeButton = document.getElementById("remove");
 
 button.addEventListener("click", function() {
 	var li = document.createElement("li");
@@ -13,3 +14,7 @@ button.addEventListener("click", function() {
 	input.value = "";
 });
 
+remove.addEventListener("click", function() {
+	var itemToRemove = input.value;
+	list.removeChild(list.lastChild);
+});
