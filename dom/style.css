@@ -20,6 +20,14 @@ ul {
   margin-left: 5px;
 }
 
+.toDoItem {
+
+}
+
+.itemDone {
+  text-decoration: line-through;
+}
+
 .theBounce {
   position: relative;
   top: 20px;
