@@ -12,6 +12,14 @@ h1 {
   /*height: 100px;*/
 }
 
+ul {
+  list-style: none;
+}
+
+.deleteButton {
+  margin-left: 5px;
+}
+
 .theBounce {
   position: relative;
   top: 20px;

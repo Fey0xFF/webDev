@@ -14,8 +14,12 @@ function checkInputToAdd() {
 function addItem() {
 	if (checkInputToAdd()) {
 		var li = document.createElement("li");
+		var bt = document.createElement("button");
+		bt.appendChild(document.createTextNode("x"));
+		bt.classList.add("deleteButton");
 		li.appendChild(document.createTextNode(input.value));
-		list.appendChild(li);	
+		list.appendChild(li);
+		li.appendChild(bt);
 		input.value = "";
 	}
 }
