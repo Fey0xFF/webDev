@@ -47,11 +47,11 @@ function strikeItem(e) {
 }
 
 function interactItem(e) {
-	if (e.target.tagName === "LI") {
-		var clickedItem = e.target;
-		clickedItem.classList.toggle("itemDone");
-	} else if (e.target.tagName == "BUTTON") {
-		e.path[1].remove();
+	var item = e.target;
+	if (item.tagName === "LI") {
+		item.classList.toggle("itemDone");
+	} else if (item.tagName == "BUTTON") {
+		item.parentNode.remove();
 	}
 }
 
