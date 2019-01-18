@@ -1,61 +1,32 @@
-var button = document.getElementById("enter");
-var input = document.getElementById("userinput");
-var list = document.querySelector("ul");
-var removeButton = document.getElementById("remove");
-var listItem = document.querySelectorAll("li");
+var css = document.querySelector("h3");
+var color1 = document.querySelector(".color1");
+var color2 = document.querySelector(".color2");
+var body = document.getElementById("gradient");
+var randomButton = document.getElementById("randomize");
+body.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
+css.textContent = body.style.background + ";";
 
-function checkInputToAdd() {
-	if (input.value.length > 0) {
-		return true;
-	} else {
-		return alert("Nothing entered!");
-	}
+function updateColors() {
+	body.style.background = 
+		"linear-gradient(to right, " 
+		+ color1.value 
+		+ ", " 
+		+ color2.value 
+		+ ")";
+		css.textContent = body.style.background + ";";	
 }
 
-function addItem() {
-	if (checkInputToAdd()) {
-		var li = document.createElement("li");
-		var bt = document.createElement("button");
-		bt.appendChild(document.createTextNode("x"));
-		bt.classList.add("deleteButton");
-		li.appendChild(document.createTextNode(input.value));
-		li.classList.add("toDoItem");
-		list.appendChild(li);
-		li.appendChild(bt);
-		input.value = "";
-	}
+function randomHex() {
+	return (~~(Math.random()*16)).toString(16);
 }
 
-function addItemAfterPress(e) {
-	if (e.keyCode === 13) {
-		if (checkInputToAdd()) {
-			addItem();	
-		}
-	}
+function randomColors() {
+	color1.value = "#000000".replace(/0/g,randomHex);
+	color2.value = "#000000".replace(/0/g,randomHex);
+	updateColors();	
 }
 
-function removeLastItem() {
-	if (list.children.length > 0) {
-		list.lastElementChild.remove();
-	} else {
-		alert("List is empty!");
-	}
-}
+color1.addEventListener("input", updateColors);
+color2.addEventListener("input", updateColors);
+randomButton.addEventListener("click", randomColors);
 
-function strikeItem(e) {
-	this.classList.toggle("itemDone");
-}
-
-function interactItem(e) {
-	var item = e.target;
-	if (item.tagName === "LI") {
-		item.classList.toggle("itemDone");
-	} else if (item.tagName == "BUTTON") {
-		item.parentNode.remove();
-	}
-}
-
-list.addEventListener("click", interactItem);
-button.addEventListener("click", addItem);
-input.addEventListener("keypress", addItemAfterPress);
-remove.addEventListener("click", removeLastItem);
