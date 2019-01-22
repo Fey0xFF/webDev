@@ -87,9 +87,10 @@ const array = [
 ];
 
 let newArray = array.map(item => {
-  return item.items.map(inside => {
+  item.items = item.items.map(inside => {
     return `${inside}!`;
   })
+  return item;
 })
 
 console.log(newArray);
