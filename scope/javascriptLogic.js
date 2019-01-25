@@ -10,30 +10,31 @@
 const arrayFeed = [1,2,4,591,392,391,2,5,10,2,1,1,1,20,20];
 const arrayFeedExtra = [1,2,4,591,392,391,"2",5,10,2,"1",1,1,20,20];
 
+// sort the array
+// store array data into a nested object i.e [1,1,2,3,4,4]
+// // {{item:1, length:2}, {item:2, length:1}...}
+// spawn a new array from the object properties
+
 function arrayOrganizer(array) {
     array = array.sort((a, b) => a - b);
-    console.log(array);
-    // let workingArray = array.map(function(item, index) {
-    //     return [index, item];
-    // });
-    //let workingObject = {};
-    // array.forEach((item) => {
-    //     if (typeof item === "string") {
-    //         workingObject[`${item}string`] += 1;
-    //     } else { 
-    //         workingObject[item] = (workingObject[item] || 0)+1;
-    //     }
-    // })
-    let workingObject = {};
+    // console.log(array);
+    let arrayData = {};
+    let spawnedArray = [];
+    let chunkCounter = 0;
     array.forEach(item => {
-        workingObject[item] = (workingObject[item] || 0) + 1;
-    });
-
-    workingObject.forEach(item => {
-        item.forEach((key, value) => {
-            console.log(key, value);
-        })
+        arrayData[item] = (arrayData[item] || 0) + 1;
     })
+    Object.entries(arrayData).forEach(([item, occurences]) => {
+        // console.log(`${item}: ${occurences}`);
+        spawnedArray.push([]); // start a new chunk
+        // console.log(spawnedArray);
+        for (let i = 0; i < occurences; i++) {
+            // console.log(spawnedArray);
+            spawnedArray[chunkCounter].push(item);
+        }
+        chunkCounter++;
+    })
+    return spawnedArray;
 }
 
 console.log(arrayOrganizer(arrayFeed));
