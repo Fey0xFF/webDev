@@ -17,25 +17,36 @@ const arrayFeedExtra = [1,2,4,591,392,391,"2",5,10,2,"1",1,1,20,20];
 
 function arrayOrganizer(array) {
     array = array.sort((a, b) => a - b);
-    // console.log(array);
     let arrayData = {};
     let spawnedArray = [];
     let chunkCounter = 0;
+
+    // write to object the item and occurences
     array.forEach(item => {
-        arrayData[item] = (arrayData[item] || 0) + 1;
-    })
-    Object.entries(arrayData).forEach(([item, occurences]) => {
-        // console.log(`${item}: ${occurences}`);
-        spawnedArray.push([]); // start a new chunk
-        // console.log(spawnedArray);
-        for (let i = 0; i < occurences; i++) {
-            // console.log(spawnedArray);
-            spawnedArray[chunkCounter].push(item);
+        debugger;
+        if (typeof item === "string") {
+            arrayData[`s${item}`] = (arrayData[Number(item)] || 0) + 1; 
+        } else {
+            arrayData[item] = (arrayData[item] || 0) + 1; 
         }
-        chunkCounter++;
     })
+
+    // spawn a chunked array from array data
+    Object.entries(arrayData).forEach(([item, occurences]) => {
+        console.log(`${item}: ${occurences}`)
+        spawnedArray.push([]); // start a new []
+        for (let i = 0; i < occurences; i++) {
+            if (item[0] === "s") {
+                spawnedArray[chunkCounter].push(item.slice(1));
+            } else {
+                spawnedArray[chunkCounter].push(Number(item)); // fill array with item the number of items it occurs
+            }
+        }
+        chunkCounter++; // prepare array to start from new []
+    })
+
     return spawnedArray;
 }
 
-console.log(arrayOrganizer(arrayFeed));
-//console.log(arrayOrganizer(arrayFeedExtra));
+//console.log(arrayOrganizer(arrayFeed));
+console.log(arrayOrganizer(arrayFeedExtra));
