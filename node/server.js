@@ -3,28 +3,42 @@ const bodyParser = require('body-parser');
 
 
 const app = express();
+app.use(express.static(__dirname + '/public'));
 
-app.use(bodyParser.urlencoded({extended: false}))
-app.use(bodyParser.json());
+
+
+
+app.listen(3000);
+
+
+// app.use(bodyParser.urlencoded({extended: false}))
+// app.use(bodyParser.json());
+
+
+// app.get('/:id', (req, res) => {
+// 	// console.log(req.query);
+// 	// req.body
+// 	// req.headers
+// 	console.log(req.params);
+// 	res.status(404).send("not found");
+// })
+
+
 // app.use((req, res, next) => {
 // 	console.log('<h1>HELLLOOO</h1>')
 // 	next();
 // })
 
-app.get('/', (req, res) => {
-	res.send("Getting Root...");
-})
+// OLD APP.GET/POST CODE
+// app.get('/profile', (req, res) => {
+// 	res.send("Getting Profile...");
+// })
 
-app.get('/profile', (req, res) => {
-	res.send("Getting Profile...");
-})
+// app.post('/profile', (req, res) => {
+// 	console.log(req.body)
+// 	res.send("success");
+// })
 
-app.post('/profile', (req, res) => {
-	console.log(req.body)
-	res.send("success");
-})
-
-app.listen(3000);
 
 
 // OLD CODE TESTING BASIC HTTP
